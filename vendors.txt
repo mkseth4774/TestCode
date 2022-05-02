@@ -1,0 +1,9 @@
+How does HTTP/2 actually implement framing and frame multiplexing, and why is this possible at all?
+An HTTP/1.1 request is composed of a request line, then a headers section, followed by a data section. 
+The start line ends with a carriage return and linefeed (CRLF), and so does each header field. i
+The headers section is then concluded with two CRLFs (an empty line) signaling the start of the data section.
+HTTP/2, on the other hand, implements a binary framing format, where the HTTP mes- sage is split into frames composed of sequences of bytes. 
+Each frame contains headers (not the HTTP headers) that contain the frame metadata, such as the frame length, type, and stream ID, in addition to the frame payload. 
+The frame format is illustrated in Figure 8-13.
+
+ap005,192.168.33.59,ftx839483984,admin,password
